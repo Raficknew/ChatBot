@@ -1,13 +1,15 @@
 import { Mic, Send } from "lucide-react";
 import { useState } from "react";
+import type { Message } from "../../types/types";
 import { IconButton, IconButtonWithBackground } from "../atoms/IconButton";
 
-export function ChatInput() {
+export function ChatInput({ onSubmit }: { onSubmit?: (message: Message) => void } = {}) {
   const [currentMessage, setCurrentMessage] = useState("");
 
-  const handleSubmit = (message: string) => {
-    if (!message?.trim()) return;
+  const handleSubmit = (text: string) => {
+    if (!text?.trim()) return;
     setCurrentMessage("");
+    onSubmit?.({ id: crypto.randomUUID(), text, sender: "user" });
   };
 
   return (

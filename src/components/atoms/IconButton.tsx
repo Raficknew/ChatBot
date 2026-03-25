@@ -2,19 +2,20 @@ import { cn } from "../../lib/utils";
 
 export function IconButton({
   children,
-  onClick,
+  className,
 }: {
   children?: React.ReactNode;
-  onClick?: () => void;
+  className?: string;
 }) {
   return (
-    <button
-      type="button"
-      className="size-10 flex items-center justify-center cursor-pointer"
-      onClick={onClick}
+    <div
+      className={cn(
+        "size-10 flex items-center justify-center cursor-pointer",
+        className,
+      )}
     >
       {children}
-    </button>
+    </div>
   );
 }
 

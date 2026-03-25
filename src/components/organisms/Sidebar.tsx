@@ -6,7 +6,7 @@ export function Sidebar() {
   return (
     <div className="h-full bg-surface border border-surface/10 py-10 px-6 rounded-full flex flex-col justify-between items-center">
       <div className="flex flex-col items-center gap-6">
-        <img src="/src/assets/images/chatIcon.svg" alt="chatIcon" />
+        <img src="/src/assets/images/ChatAvatar.svg" alt="chatIcon" />
         <IconButtonWithBackground>
           <Plus color="white" />
         </IconButtonWithBackground>

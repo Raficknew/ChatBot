@@ -1,4 +1,5 @@
 import { Eye, Home, Lightbulb } from "lucide-react";
+import type { Message } from "../../types/types";
 import { ChatTitle } from "../atoms/ChatTitle";
 import { ChatInput } from "../molecules/ChatInput";
 import { MessageOption } from "../molecules/MesssageOption";
@@ -15,7 +16,7 @@ const messageOptions = [
   },
 ];
 
-export function ChatPreview() {
+export function ChatPreview({ onStartChat }: { onStartChat: (message: Message) => void }) {
   return (
     <div className="bg-surface h-full w-full flex flex-col justify-between rounded-2xl px-16 py-10">
       <ChatTitle
@@ -28,10 +29,11 @@ export function ChatPreview() {
             key={option.title}
             title={option.title}
             icon={option.icon}
+            onClick={() => onStartChat({ id: crypto.randomUUID(), text: option.title, sender: "user" })}
           />
         ))}
       </div>
-      <ChatInput />
+      <ChatInput onSubmit={(msg) => onStartChat(msg)} />
     </div>
   );
 }
