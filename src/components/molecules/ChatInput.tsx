@@ -1,18 +1,40 @@
 import { Mic, Send } from "lucide-react";
 import { IconButton, IconButtonWithBackground } from "../atoms/IconButton";
+import { useState } from "react";
 
 export function ChatInput() {
+  const [currentMessage, setCurrentMessage] = useState("");
+
+  const handleSubmit = (message: string) => {
+    if (!message?.trim()) return;
+    setCurrentMessage("");
+  };
+
   return (
-    <div className="flex w-full items-center justify-between bg-foreground py-4 px-10 border border-foreground/10 rounded-full">
-      <div className="flex gap-2">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit(currentMessage);
+      }}
+      className="flex w-full items-center justify-between bg-foreground py-4 px-10 border border-foreground/10 rounded-full gap-2"
+    >
+      <div className="flex flex-1 gap-2">
         <IconButton>
           <Mic color="gray" />
         </IconButton>
-        <input type="text" placeholder="Ask anything from here" />
+        <div className="flex flex-1 items-center">
+          <input
+            type="text"
+            placeholder="Ask anything from here"
+            className="w-full outline-none"
+            value={currentMessage}
+            onChange={(e) => setCurrentMessage(e.target.value)}
+          />
+        </div>
       </div>
-      <IconButtonWithBackground>
+      <IconButtonWithBackground type="submit" disabled={!currentMessage}>
         <Send color="white" />
       </IconButtonWithBackground>
-    </div>
+    </form>
   );
 }

@@ -1,3 +1,5 @@
+import { cn } from "../../lib/utils";
+
 export function IconButton({
   children,
   onClick,
@@ -18,15 +20,20 @@ export function IconButton({
 
 export function IconButtonWithBackground({
   children,
+  type = "button",
+  disabled,
   onClick,
 }: {
   children?: React.ReactNode;
+  type?: "button" | "submit" | "reset";
   onClick?: () => void;
+  disabled?: boolean;
 }) {
   return (
     <button
-      type="button"
-      className="bg-accent p-2 rounded-lg"
+      type={type}
+      disabled={disabled}
+      className={cn("bg-accent p-2 rounded-lg", disabled && "bg-gray-200")}
       onClick={onClick}
     >
       {children}

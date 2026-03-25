@@ -5,6 +5,7 @@
   --color-foreground: oklch(100.00% 0 0);
   --color-surface: oklch(96.42% 0 0);
   --color-accent: oklch(61.49% 0.182 256.94);
+  --color-muted: oklch(100% 0 0 / 10%);
   --font-lato: "Lato", sans-serif;
 }
 
