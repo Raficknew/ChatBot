@@ -38,6 +38,7 @@ export function ChatPreview({
                 id: crypto.randomUUID(),
                 text: option.title,
                 sender: "user",
+                timestamp: new Date(),
               })
             }
           />

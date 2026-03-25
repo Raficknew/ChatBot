@@ -20,8 +20,9 @@ export function Chat({
 
   const handleBotResponse = useCallback(
     (userText: string) => {
-      const matchedIndex = ChatBotResponses.findIndex((response) =>
-        response.sampleQuestion.toLowerCase().includes(userText.toLowerCase()),
+      const matchedIndex = ChatBotResponses.findIndex(
+        (response) =>
+          response.sampleQuestion.toLowerCase() === userText.toLowerCase(),
       );
 
       const indexToUse =
@@ -58,7 +59,13 @@ export function Chat({
       <div className="flex flex-col gap-10 overflow-y-auto flex-1 py-4">
         {messages.map((entry, index) => {
           if (entry.sender === "user") {
-            return <UserMessage key={entry.id} content={entry.text} />;
+            return (
+              <UserMessage
+                key={entry.id}
+                content={entry.text}
+                timestamp={entry.timestamp}
+              />
+            );
           }
 
           const precedingUserMessage = messages

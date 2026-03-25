@@ -13,7 +13,7 @@ export function ChatInput({
   const handleSubmit = (text: string) => {
     if (!text?.trim()) return;
     setCurrentMessage("");
-    onSubmit?.({ id: crypto.randomUUID(), text, sender: "user" });
+    onSubmit?.({ id: crypto.randomUUID(), text, sender: "user", timestamp: new Date() });
   };
 
   return (
@@ -34,6 +34,7 @@ export function ChatInput({
             placeholder="Ask anything from here"
             className="w-full outline-none"
             value={currentMessage}
+            maxLength={150}
             onChange={(e) => setCurrentMessage(e.target.value)}
           />
         </div>

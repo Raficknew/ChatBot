@@ -2,6 +2,7 @@ export type Message = {
   id: string;
   text: string;
   sender: "user";
+  timestamp: Date;
 };
 
 export type BotResponse = {
