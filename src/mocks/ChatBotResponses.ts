@@ -3,6 +3,7 @@ import type { BotResponse } from "../types/types";
 export const ChatBotResponses: BotResponse[] = [
   {
     id: "124212412",
+    sender: "bot",
     label:
       "UI/UX stands for User Interface (UI) and User Experience (UX), two essential aspects of designing digital products such as websites, apps, and software.",
     content: [

@@ -3,10 +3,10 @@ import "./App.css";
 import { ChatPreview } from "./components/organisms/ChatPreview";
 import { Sidebar } from "./components/organisms/Sidebar";
 import { Chat } from "./components/organisms/Chat";
-import type { Message } from "./types/types";
+import type { ChatMessages, Message } from "./types/types";
 
 function App() {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<ChatMessages[]>([]);
 
   const handleStartChat = (message: Message) => {
     setMessages([message]);
