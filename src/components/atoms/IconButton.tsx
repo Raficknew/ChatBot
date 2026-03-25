@@ -10,7 +10,7 @@ export function IconButton({
   return (
     <button
       type="button"
-      className="size-10 flex items-center justify-center"
+      className="size-10 flex items-center justify-center cursor-pointer"
       onClick={onClick}
     >
       {children}
@@ -33,7 +33,10 @@ export function IconButtonWithBackground({
     <button
       type={type}
       disabled={disabled}
-      className={cn("bg-accent p-2 rounded-lg", disabled && "bg-gray-200")}
+      className={cn(
+        "bg-accent p-2 rounded-lg cursor-pointer",
+        disabled && "bg-gray-200",
+      )}
       onClick={onClick}
     >
       {children}

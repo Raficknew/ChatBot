@@ -1,6 +1,6 @@
 import { Mic, Send } from "lucide-react";
-import { IconButton, IconButtonWithBackground } from "../atoms/IconButton";
 import { useState } from "react";
+import { IconButton, IconButtonWithBackground } from "../atoms/IconButton";
 
 export function ChatInput() {
   const [currentMessage, setCurrentMessage] = useState("");
