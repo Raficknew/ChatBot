@@ -2,6 +2,7 @@ import { CheckCheck } from "lucide-react";
 import chatAvatarSrc from "../../assets/images/ChatAvatar.svg";
 import type { BotResponse } from "../../types/types";
 import { IconButton } from "../atoms/IconButton";
+import { motion } from "motion/react";
 
 export function BotMessage({
   threadTitle,
@@ -11,7 +12,12 @@ export function BotMessage({
   content: BotResponse;
 }) {
   return (
-    <div className="flex flex-col gap-2 w-full bg-foreground px-10 py-6 rounded-md">
+    <motion.div
+      className="flex flex-col gap-2 w-full bg-foreground px-10 py-6 rounded-md"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeIn", delay: 0.2 }}
+    >
       <div className="flex flex-col gap-6">
         <div className="flex gap-2 items-center">
           <div className="self-start">
@@ -41,6 +47,6 @@ export function BotMessage({
           <h2 className="text-[18px]">{content.footer}</h2>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

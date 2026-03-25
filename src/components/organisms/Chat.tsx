@@ -85,7 +85,7 @@ export function Chat({
         {isBotThinking && <ChatBotLoadingResponse />}
         <div ref={bottomRef} />
       </div>
-      <ChatInput onSubmit={handleSend} />
+      <ChatInput onSubmit={handleSend} disabled={isBotThinking} />
     </div>
   );
 }

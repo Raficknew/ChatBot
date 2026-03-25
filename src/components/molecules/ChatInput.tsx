@@ -5,13 +5,15 @@ import { IconButton, IconButtonWithBackground } from "../atoms/IconButton";
 
 export function ChatInput({
   onSubmit,
+  disabled,
 }: {
   onSubmit?: (message: Message) => void;
+  disabled?: boolean;
 } = {}) {
   const [currentMessage, setCurrentMessage] = useState("");
 
   const handleSubmit = (text: string) => {
-    if (!text?.trim()) return;
+    if (!text?.trim() || disabled) return;
     setCurrentMessage("");
     onSubmit?.({ id: crypto.randomUUID(), text, sender: "user", timestamp: new Date() });
   };
@@ -39,7 +41,7 @@ export function ChatInput({
           />
         </div>
       </div>
-      <IconButtonWithBackground type="submit" disabled={!currentMessage}>
+      <IconButtonWithBackground type="submit" disabled={!currentMessage || disabled}>
         <Send color="white" />
       </IconButtonWithBackground>
     </form>
