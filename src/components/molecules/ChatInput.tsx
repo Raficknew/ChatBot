@@ -3,7 +3,11 @@ import { useState } from "react";
 import type { Message } from "../../types/types";
 import { IconButton, IconButtonWithBackground } from "../atoms/IconButton";
 
-export function ChatInput({ onSubmit }: { onSubmit?: (message: Message) => void } = {}) {
+export function ChatInput({
+  onSubmit,
+}: {
+  onSubmit?: (message: Message) => void;
+} = {}) {
   const [currentMessage, setCurrentMessage] = useState("");
 
   const handleSubmit = (text: string) => {

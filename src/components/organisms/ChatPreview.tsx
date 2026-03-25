@@ -16,7 +16,11 @@ const messageOptions = [
   },
 ];
 
-export function ChatPreview({ onStartChat }: { onStartChat: (message: Message) => void }) {
+export function ChatPreview({
+  onStartChat,
+}: {
+  onStartChat: (message: Message) => void;
+}) {
   return (
     <div className="bg-surface h-full w-full flex flex-col justify-between rounded-2xl px-16 py-10">
       <ChatTitle
@@ -29,7 +33,13 @@ export function ChatPreview({ onStartChat }: { onStartChat: (message: Message) =
             key={option.title}
             title={option.title}
             icon={option.icon}
-            onClick={() => onStartChat({ id: crypto.randomUUID(), text: option.title, sender: "user" })}
+            onClick={() =>
+              onStartChat({
+                id: crypto.randomUUID(),
+                text: option.title,
+                sender: "user",
+              })
+            }
           />
         ))}
       </div>

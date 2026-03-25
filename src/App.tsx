@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import { Chat } from "./components/organisms/Chat";
 import { ChatPreview } from "./components/organisms/ChatPreview";
 import { Sidebar } from "./components/organisms/Sidebar";
-import { Chat } from "./components/organisms/Chat";
 import type { ChatMessages, Message } from "./types/types";
 
 function App() {

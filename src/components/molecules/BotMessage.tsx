@@ -1,4 +1,5 @@
 import { CheckCheck } from "lucide-react";
+import chatAvatarSrc from "../../assets/images/ChatAvatar.svg";
 import type { BotResponse } from "../../types/types";
 import { IconButton } from "../atoms/IconButton";
 
@@ -13,11 +14,14 @@ export function BotMessage({
     <div className="flex flex-col gap-2 w-full bg-foreground px-10 py-6 rounded-md ">
       <div className="flex flex-col gap-6">
         <div className="flex gap-2 items-center">
-          <IconButton>
-            <img src="/src/assets/images/ChatAvatar.svg" alt="chatIcon" />
-          </IconButton>
+          <div className="self-start">
+            {" "}
+            <IconButton>
+              <img src={chatAvatarSrc} alt="chatIcon" />
+            </IconButton>
+          </div>
           <div>
-            <h3>{threadTitle}</h3>
+            <h3 className="break-all"> {threadTitle}</h3>
           </div>
         </div>
         <div className="bg-gray-200 h-px w-full" />

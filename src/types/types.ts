@@ -6,6 +6,7 @@ export type Message = {
 
 export type BotResponse = {
   id: string;
+  sampleQuestion: string;
   label: string;
   content: [string] | [string, string];
   footer: string;
