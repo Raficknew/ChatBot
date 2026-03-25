@@ -1,5 +1,5 @@
 import "./App.css";
-import { ChatView } from "./components/organisms/ChatView";
+import { ChatPreview } from "./components/organisms/ChatPreview";
 import { Sidebar } from "./components/organisms/Sidebar";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
       <div className="h-full rounded-md bg-foreground px-10 py-22">
         <main className="flex flex-row gap-10 h-full">
           <Sidebar />
-          <ChatView />
+          <ChatPreview />
         </main>
       </div>
     </div>
