@@ -15,3 +15,5 @@ export type BotResponse = {
 };
 
 export type ChatMessages = Message | BotResponse;
+
+export type Theme = "light" | "dark";

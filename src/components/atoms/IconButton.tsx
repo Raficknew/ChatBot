@@ -36,7 +36,7 @@ export function IconButtonWithBackground({
       disabled={disabled}
       className={cn(
         "bg-accent p-2 rounded-lg cursor-pointer",
-        disabled && "bg-gray-200",
+        disabled && "bg-border",
       )}
       onClick={onClick}
     >

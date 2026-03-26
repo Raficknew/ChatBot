@@ -16,13 +16,13 @@ export function UserMessage({
         <IconButton className="bg-foreground rounded-lg">
           <SquarePen />
         </IconButton>
-        <div className="flex gap-4 md:gap-6 items-center bg-foreground border border-foreground/10 py-3 px-4 md:py-4 md:px-10 rounded-2xl">
+        <div className="flex gap-4 md:gap-6 items-center bg-foreground border border-border py-3 px-4 md:py-4 md:px-10 rounded-2xl">
           <UserAvatar />
           <span className="wrap-break-word">{content}</span>
         </div>
       </div>
       {timestamp && (
-        <span className="text-xs text-gray-400 mr-2">
+        <span className="text-xs text-text-secondary mr-2">
           {formatTimestamp(timestamp)}
         </span>
       )}

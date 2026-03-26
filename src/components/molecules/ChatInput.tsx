@@ -29,17 +29,17 @@ export function ChatInput({
         e.preventDefault();
         handleSubmit(currentMessage);
       }}
-      className="flex w-full items-center justify-between bg-foreground py-3 px-4 md:py-4 md:px-10 border border-foreground/10 rounded-full gap-2"
+      className="flex w-full items-center justify-between bg-foreground py-3 px-4 md:py-4 md:px-10 border border-border rounded-full gap-2"
     >
       <div className="flex flex-1 gap-2">
         <IconButton>
-          <Mic color="gray" />
+          <Mic className="text-text-secondary" />
         </IconButton>
         <div className="flex flex-1 items-center">
           <input
             type="text"
             placeholder="Ask anything from here"
-            className="w-full outline-none"
+            className="w-full outline-none bg-transparent text-text-primary"
             value={currentMessage}
             maxLength={150}
             onChange={(e) => setCurrentMessage(e.target.value)}

@@ -17,7 +17,7 @@ export function MessageOption({
         onClick?.();
       }}
     >
-      <h2 className="text-gray-700">{title}</h2>
+      <h2 className="text-text-secondary">{title}</h2>
       <div className="absolute bottom-0 right-2">
         <IconButton>{icon}</IconButton>
       </div>

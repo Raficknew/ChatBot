@@ -10,7 +10,7 @@ export function ChatTitle({
       <h1 className="font-bold text-3xl md:text-5xl bg-[linear-gradient(90deg,#2F82EF_0%,#FF3B3B_40%)] bg-clip-text text-transparent">
         {title}
       </h1>
-      <h2 className="font-semibold text-2xl md:text-[40px] text-gray-500">
+      <h2 className="font-semibold text-2xl md:text-[40px] text-text-secondary">
         {description}
       </h2>
     </div>

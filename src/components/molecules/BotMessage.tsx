@@ -29,7 +29,7 @@ export function BotMessage({
             <h3 className="wrap-break-word">{threadTitle}</h3>
           </div>
         </div>
-        <div className="bg-gray-200 h-px w-full" />
+        <div className="bg-border h-px w-full" />
       </div>
       <div className="flex flex-col w-full items-center">
         <div className="flex flex-col max-w-full md:max-w-203 gap-4 md:gap-6">
