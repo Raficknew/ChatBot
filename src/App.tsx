@@ -13,10 +13,10 @@ function App() {
   };
 
   return (
-    <div className="bg-background w-full h-screen px-20 py-22">
-      <div className="h-full rounded-md bg-foreground px-10 py-22">
-        <main className="flex flex-row gap-10 h-full">
-          <Sidebar />
+    <div className="bg-background w-full h-screen px-4 py-4 md:px-10 md:py-6 lg:px-20 lg:py-22">
+      <div className="h-full rounded-md bg-foreground px-4 py-4 md:px-10 md:py-10 lg:py-22">
+        <main className="flex flex-col md:flex-row gap-4 md:gap-10 h-full">
+            <Sidebar />
           {messages.length > 0 ? (
             <Chat messages={messages} setMessages={setMessages} />
           ) : (

@@ -22,12 +22,12 @@ export function ChatPreview({
   onStartChat: (message: Message) => void;
 }) {
   return (
-    <div className="bg-surface h-full w-full flex flex-col justify-between rounded-2xl px-16 py-10">
+    <div className="bg-surface h-full w-full flex flex-col justify-between rounded-2xl px-4 py-6 md:px-16 md:py-10">
       <ChatTitle
         title="Hi Milano Cherry"
         description="How can i help you today"
       />
-      <div className="flex gap-6">
+      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full">
         {messageOptions.map((option) => (
           <MessageOption
             key={option.title}
@@ -44,7 +44,9 @@ export function ChatPreview({
           />
         ))}
       </div>
-      <ChatInput onSubmit={(msg) => onStartChat(msg)} />
+      <div className="mt-6">
+        <ChatInput onSubmit={(msg) => onStartChat(msg)} />
+      </div>
     </div>
   );
 }

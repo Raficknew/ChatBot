@@ -12,7 +12,7 @@ export function MessageOption({
   return (
     <button
       type="button"
-      className="w-67.5 h-53.25 bg-foreground rounded-[14px] px-6 py-9 cursor-pointer text-start relative"
+      className="w-full flex-1 min-w-0 max-w-67.5 h-auto sm:h-53.25 bg-foreground rounded-[14px] px-4 py-6 pb-10 sm:px-6 sm:py-9 cursor-pointer text-start relative"
       onClick={() => {
         onClick?.();
       }}

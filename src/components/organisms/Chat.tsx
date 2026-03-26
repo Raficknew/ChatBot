@@ -55,8 +55,8 @@ export function Chat({
   };
 
   return (
-    <div className="bg-surface h-full w-full flex flex-col justify-between rounded-2xl px-16 py-10">
-      <div className="flex flex-col gap-10 overflow-y-auto flex-1 py-4">
+    <div className="bg-surface h-full w-full flex flex-col justify-between rounded-2xl px-4 py-6 md:px-16 md:py-10">
+      <div className="flex flex-col gap-6 md:gap-10 overflow-y-auto flex-1 py-4">
         {messages.map((entry, index) => {
           if (entry.sender === "user") {
             return (
@@ -73,7 +73,7 @@ export function Chat({
             .findLast((msg) => msg.sender === "user");
 
           return (
-            <div key={entry.id} className="flex items-center gap-6">
+            <div key={entry.id} className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
               <BotMessage
                 threadTitle={precedingUserMessage?.text ?? ""}
                 content={entry}
@@ -85,7 +85,9 @@ export function Chat({
         {isBotThinking && <ChatBotLoadingResponse />}
         <div ref={bottomRef} />
       </div>
-      <ChatInput onSubmit={handleSend} disabled={isBotThinking} />
+      <div className="mt-6">
+        <ChatInput onSubmit={handleSend} disabled={isBotThinking} />
+      </div>
     </div>
   );
 }

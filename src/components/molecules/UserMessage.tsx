@@ -16,9 +16,9 @@ export function UserMessage({
         <IconButton className="bg-foreground rounded-lg">
           <SquarePen />
         </IconButton>
-        <div className="flex gap-6 items-center bg-foreground border border-foreground/10 py-4 px-10 rounded-2xl">
+        <div className="flex gap-4 md:gap-6 items-center bg-foreground border border-foreground/10 py-3 px-4 md:py-4 md:px-10 rounded-2xl">
           <UserAvatar />
-          {content}
+          <span className="wrap-break-word">{content}</span>
         </div>
       </div>
       {timestamp && (

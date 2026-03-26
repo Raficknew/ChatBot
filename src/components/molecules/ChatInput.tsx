@@ -24,7 +24,7 @@ export function ChatInput({
         e.preventDefault();
         handleSubmit(currentMessage);
       }}
-      className="flex w-full items-center justify-between bg-foreground py-4 px-10 border border-foreground/10 rounded-full gap-2"
+      className="flex w-full items-center justify-between bg-foreground py-3 px-4 md:py-4 md:px-10 border border-foreground/10 rounded-full gap-2"
     >
       <div className="flex flex-1 gap-2">
         <IconButton>
