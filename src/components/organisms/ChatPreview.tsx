@@ -10,17 +10,15 @@ const messageOptions: MessageOptionType[] = [
   {
     title: "Create an image for my presentation",
     icon: <img src={ImageSearchIcon} aria-label="ImageSearchIcon" />,
-    gradientColor: "#223FFA",
   },
   {
     title: "What to do with kids’ art",
     icon: <Lightbulb color="#F1A62D" />,
-    gradientColor: "#F1A62D",
   },
   {
     title: "Find the decade that a photo is from",
     icon: <Eye color="#37C390" />,
-    gradientColor: "#37C390",
+
   },
 ];
 
@@ -35,14 +33,13 @@ export function ChatPreview({
         title="Hi Milano Cherry"
         description="How can i help you today"
       />
-      <div className="flex items-end gap-4 md:gap-6 w-full">
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 flex-1 min-w-0">
+      <div className="flex gap-4 md:gap-6 w-full">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 flex-1 min-w-0 w-full">
           {messageOptions.map((option) => (
             <MessageOption
               key={option.title}
               title={option.title}
               icon={option.icon}
-              gradientColor={option.gradientColor}
               onClick={() =>
                 onStartChat({
                   id: crypto.randomUUID(),

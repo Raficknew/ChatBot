@@ -22,5 +22,4 @@ export type MessageOptionType = {
   title: string;
   icon: React.ReactNode;
   onClick?: () => void;
-  gradientColor: string;
 };

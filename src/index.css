@@ -41,8 +41,34 @@
   }
 }
 
-.message-option-scoop {
-  border-radius: 14px 14px 70px 14px;
-  /* biome-ignore lint/correctness/noUnknownProperty: its valid css property but biome seems to do not recognize it yet */
-  corner-shape: round round scoop round;
+
+.inverted {
+  position: relative;
+  background: transparent;
+}
+
+.inverted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--foreground);
+  -webkit-mask: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M14%2C0H86A14%2C14%200%2C0%2C1%20100%2C14V65A10%2C10%200%2C0%2C1%2090%2C75H85A10%2C10%200%2C0%2C0%2075%2C85V90A10%2C10%200%2C0%2C1%2065%2C100H14A14%2C14%200%2C0%2C1%200%2C86V14A14%2C14%200%2C0%2C1%2014%2C0Z%22%20fill%3D%22%23fff%22%20%2F%3E%3C%2Fsvg%3E') no-repeat center / 100% 100%;
+  mask: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M14%2C0H86A14%2C14%200%2C0%2C1%20100%2C14V65A10%2C10%200%2C0%2C1%2090%2C75H85A10%2C10%200%2C0%2C0%2075%2C85V90A10%2C10%200%2C0%2C1%2065%2C100H14A14%2C14%200%2C0%2C1%200%2C86V14A14%2C14%200%2C0%2C1%2014%2C0Z%22%20fill%3D%22%23fff%22%20%2F%3E%3C%2Fsvg%3E') no-repeat center / 100% 100%;
+  z-index: 0;
+}
+
+.inverted::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 16%;
+  right: 16%;
+  height: 2px;
+  background-color: var(--inverted-border-color, transparent);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.inverted > * {
+  z-index: 1;
 }

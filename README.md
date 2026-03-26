@@ -18,5 +18,3 @@
 7. I also blocked starting a new chat when there are no messages, to prevent the user from clearing an already empty conversation.
 
 8. In Figma I couldn't get the colors for the dark theme so I just swapped two — background and foreground — and changed surface for a lighter color.
-
-9. Unfornetely i dont know how to do this shape of the div in the right corner - i found only this article: https://css-tricks.com/almanac/properties/c/corner-shape/ and went to MDN docs. Then i used the corner-shape: scoop instead :/. But it does not work in every browser.
