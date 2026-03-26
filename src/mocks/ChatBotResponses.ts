@@ -238,4 +238,40 @@ export const ChatBotResponses: BotResponse[] = [
     footer:
       "Dependency injection leads to more modular, testable, and maintainable code.",
   },
+  {
+    id: "21",
+    sender: "bot",
+    sampleQuestion: "Cretae an image for my presentation",
+    label: "Here are some tips for creating presentation images",
+    content: [
+      "Start by defining the key message of each slide. A strong visual should support the point you are making, not distract from it. Use simple compositions with plenty of whitespace.",
+      "Tools like Figma, Canva, or even AI image generators can help you create clean, professional visuals quickly. Stick to a consistent color palette and font pairing throughout.",
+    ],
+    footer:
+      "A well-designed image can communicate in seconds what a paragraph of text cannot.",
+  },
+  {
+    id: "22",
+    sender: "bot",
+    sampleQuestion: "What to do with kids' art",
+    label: "Here are some creative ideas for kids' artwork",
+    content: [
+      "One popular approach is to digitize the artwork by scanning or photographing it, then organizing it into a digital album or photo book. This preserves the memories without the physical clutter.",
+      "You can also turn favorite pieces into custom prints, magnets, or even fabric patterns. Some parents rotate a gallery wall at home, displaying a few pieces at a time and archiving the rest.",
+    ],
+    footer:
+      "Every piece of art tells a story about your child's growth and creativity.",
+  },
+  {
+    id: "23",
+    sender: "bot",
+    sampleQuestion: "Find the decade that a photo is from",
+    label: "How to determine the decade of a photograph",
+    content: [
+      "Look at visual cues like clothing styles, hairstyles, car models, and architecture in the background. Each decade has distinct fashion and design trends that can help narrow down the time period.",
+      "Technical details also help: the type of film, color saturation, print borders, and photo dimensions changed over the decades. Sepia tones suggest pre-1950s, while saturated colors with soft focus often point to the 1970s.",
+    ],
+    footer:
+      "Combining contextual clues with photo characteristics usually gets you within a decade.",
+  },
 ];

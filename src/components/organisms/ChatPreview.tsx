@@ -1,20 +1,26 @@
 import { Eye, Lightbulb } from "lucide-react";
 import ImageSearchIcon from "../../assets/icons/ImageSearch.svg";
 import Robot from "../../assets/images/Robot.svg";
-import type { Message } from "../../types/types";
+import type { Message, MessageOptionType } from "../../types/types";
 import { ChatTitle } from "../atoms/ChatTitle";
 import { ChatInput } from "../molecules/ChatInput";
 import { MessageOption } from "../molecules/MessageOption";
 
-const messageOptions = [
+const messageOptions: MessageOptionType[] = [
   {
     title: "Cretae an image for my presentation",
     icon: <img src={ImageSearchIcon} aria-label="ImageSearchIcon" />,
+    gradientColor: "#223FFA",
   },
-  { title: "What to do with kids’ art", icon: <Lightbulb color="#F1A62D" /> },
+  {
+    title: "What to do with kids’ art",
+    icon: <Lightbulb color="#F1A62D" />,
+    gradientColor: "#F1A62D",
+  },
   {
     title: "Find the decade that a photo is from",
     icon: <Eye color="#37C390" />,
+    gradientColor: "#37C390",
   },
 ];
 
@@ -36,6 +42,7 @@ export function ChatPreview({
               key={option.title}
               title={option.title}
               icon={option.icon}
+              gradientColor={option.gradientColor}
               onClick={() =>
                 onStartChat({
                   id: crypto.randomUUID(),

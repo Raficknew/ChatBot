@@ -40,3 +40,9 @@
     color: var(--text-primary);
   }
 }
+
+.message-option-scoop {
+  border-radius: 14px 14px 70px 14px;
+  /* biome-ignore lint/correctness/noUnknownProperty: its valid css property but biome seems to do not recognize it yet */
+  corner-shape: round round scoop round;
+}

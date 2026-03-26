@@ -17,3 +17,10 @@ export type BotResponse = {
 export type ChatMessages = Message | BotResponse;
 
 export type Theme = "light" | "dark";
+
+export type MessageOptionType = {
+  title: string;
+  icon: React.ReactNode;
+  onClick?: () => void;
+  gradientColor: string;
+};

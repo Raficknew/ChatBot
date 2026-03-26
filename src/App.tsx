@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
+import { ThemeSwitcher } from "./components/atoms/ThemeSwitcher";
 import { Chat } from "./components/organisms/Chat";
 import { ChatPreview } from "./components/organisms/ChatPreview";
 import { Sidebar } from "./components/organisms/Sidebar";
 import type { ChatMessages, Message } from "./types/types";
-import { ThemeSwitcher } from "./components/atoms/ThemeSwitcher";
 
 function App() {
   const [messages, setMessages] = useState<ChatMessages[]>([]);
