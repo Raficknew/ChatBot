@@ -36,9 +36,10 @@ export function Chat({
     [setMessages],
   );
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <We want this to run only when messages are updated, not when handleBotResponse changes>
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  });
+  }, [messages]);
 
   useEffect(() => {
     if (!isBotThinking) return;

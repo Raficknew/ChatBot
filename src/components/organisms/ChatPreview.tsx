@@ -4,7 +4,7 @@ import Robot from "../../assets/images/Robot.svg";
 import type { Message } from "../../types/types";
 import { ChatTitle } from "../atoms/ChatTitle";
 import { ChatInput } from "../molecules/ChatInput";
-import { MessageOption } from "../molecules/MesssageOption";
+import { MessageOption } from "../molecules/MessageOption";
 
 const messageOptions = [
   {

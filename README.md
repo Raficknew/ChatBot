@@ -1,73 +1,20 @@
-# React + TypeScript + Vite
+## URL
+WebsiteUrlWillBeHere
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## My approach
 
-Currently, two official plugins are available:
+1. I wanted to simulate a "thinking" phase like the chatbots available on the internet. The bot has a 3-second gap before sending a response. Icons with a background are functional — they are disabled when the user hasn't typed anything yet or the bot itself is thinking. The bot also tries to match the user's question against its 20 predefined responses in `mocks/ChatBotResponses`. If it succeeds, it returns the matched response, otherwise it sends a random one.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+2. I split the app into two views — `Chat`, where the whole messaging happens, and `ChatPreview`, where the user can select one of three predefined questions.
 
-## React Compiler
+3. I used a `cn` merge utility (clsx + tailwind-merge) for Tailwind because sometimes the bracket notation can break layout and override valid changes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+4. I manipulated Tailwind styles to be able to change CSS colors in one `index.css` for light and dark themes — there is a possibility to add more styles since we only need a few color variables to extend it.
 
-## Expanding the ESLint configuration
+5. I broke down components following atomic design (atoms, molecules, and organisms) because it is my go-to and also a clean approach — you can find it in a few of my other projects as well.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+6. I used Lucide icons because in the Figma design I noticed they were used.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+7. I also blocked starting a new chat when there are no messages, to prevent the user from clearing an already empty conversation.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+8. In Figma I couldn't get the colors for the dark theme so I just swapped two — background and foreground — and changed surface for a lighter color.
