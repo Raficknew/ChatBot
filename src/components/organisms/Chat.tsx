@@ -73,7 +73,10 @@ export function Chat({
             .findLast((msg) => msg.sender === "user");
 
           return (
-            <div key={entry.id} className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+            <div
+              key={entry.id}
+              className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6"
+            >
               <BotMessage
                 threadTitle={precedingUserMessage?.text ?? ""}
                 content={entry}

@@ -3,6 +3,7 @@ import type { Message } from "../../types/types";
 import { ChatTitle } from "../atoms/ChatTitle";
 import { ChatInput } from "../molecules/ChatInput";
 import { MessageOption } from "../molecules/MesssageOption";
+import Robot from "../../assets/images/Robot.svg";
 
 const messageOptions = [
   {
@@ -27,22 +28,27 @@ export function ChatPreview({
         title="Hi Milano Cherry"
         description="How can i help you today"
       />
-      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full">
-        {messageOptions.map((option) => (
-          <MessageOption
-            key={option.title}
-            title={option.title}
-            icon={option.icon}
-            onClick={() =>
-              onStartChat({
-                id: crypto.randomUUID(),
-                text: option.title,
-                sender: "user",
-                timestamp: new Date(),
-              })
-            }
-          />
-        ))}
+      <div className="flex items-end gap-4 md:gap-6 w-full">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 flex-1 min-w-0">
+          {messageOptions.map((option) => (
+            <MessageOption
+              key={option.title}
+              title={option.title}
+              icon={option.icon}
+              onClick={() =>
+                onStartChat({
+                  id: crypto.randomUUID(),
+                  text: option.title,
+                  sender: "user",
+                  timestamp: new Date(),
+                })
+              }
+            />
+          ))}
+        </div>
+        <div className="hidden 2xl:block fixed right-40 bottom-70">
+          <img src={Robot} alt="Robot" className="object-contain" />
+        </div>
       </div>
       <div className="mt-6">
         <ChatInput onSubmit={(msg) => onStartChat(msg)} />

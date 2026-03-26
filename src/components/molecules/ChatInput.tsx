@@ -15,7 +15,12 @@ export function ChatInput({
   const handleSubmit = (text: string) => {
     if (!text?.trim() || disabled) return;
     setCurrentMessage("");
-    onSubmit?.({ id: crypto.randomUUID(), text, sender: "user", timestamp: new Date() });
+    onSubmit?.({
+      id: crypto.randomUUID(),
+      text,
+      sender: "user",
+      timestamp: new Date(),
+    });
   };
 
   return (
@@ -41,7 +46,10 @@ export function ChatInput({
           />
         </div>
       </div>
-      <IconButtonWithBackground type="submit" disabled={!currentMessage || disabled}>
+      <IconButtonWithBackground
+        type="submit"
+        disabled={!currentMessage || disabled}
+      >
         <Send color="white" />
       </IconButtonWithBackground>
     </form>

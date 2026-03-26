@@ -1,8 +1,8 @@
 import { CheckCheck } from "lucide-react";
+import { motion } from "motion/react";
 import chatAvatarSrc from "../../assets/images/ChatAvatar.svg";
 import type { BotResponse } from "../../types/types";
 import { IconButton } from "../atoms/IconButton";
-import { motion } from "motion/react";
 
 export function BotMessage({
   threadTitle,
