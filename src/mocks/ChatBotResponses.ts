@@ -241,7 +241,7 @@ export const ChatBotResponses: BotResponse[] = [
   {
     id: "21",
     sender: "bot",
-    sampleQuestion: "Cretae an image for my presentation",
+    sampleQuestion: "Create an image for my presentation",
     label: "Here are some tips for creating presentation images",
     content: [
       "Start by defining the key message of each slide. A strong visual should support the point you are making, not distract from it. Use simple compositions with plenty of whitespace.",

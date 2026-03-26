@@ -8,7 +8,7 @@ import { MessageOption } from "../molecules/MessageOption";
 
 const messageOptions: MessageOptionType[] = [
   {
-    title: "Cretae an image for my presentation",
+    title: "Create an image for my presentation",
     icon: <img src={ImageSearchIcon} aria-label="ImageSearchIcon" />,
     gradientColor: "#223FFA",
   },

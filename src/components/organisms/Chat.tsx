@@ -14,8 +14,8 @@ export function Chat({
   messages: ChatMessages[];
   setMessages: React.Dispatch<React.SetStateAction<ChatMessages[]>>;
 }) {
-  const [isBotThinking, setIsBotThinking] = useState(true);
-  const [lastUserText, setLastUserText] = useState("");
+  const [isBotThinking, setIsBotThinking] = useState(false);
+  const lastUserTextRef = useRef("");
   const bottomRef = useRef<HTMLDivElement>(null);
 
   const handleBotResponse = useCallback(
@@ -44,13 +44,23 @@ export function Chat({
   useEffect(() => {
     if (!isBotThinking) return;
     const timer = setTimeout(() => {
-      handleBotResponse(lastUserText);
+      handleBotResponse(lastUserTextRef.current);
     }, 3000);
     return () => clearTimeout(timer);
-  }, [handleBotResponse, isBotThinking, lastUserText]);
+  }, [handleBotResponse, isBotThinking]);
+
+  const lastMsg = messages.length > 0 ? messages[messages.length - 1] : null;
+  const initialUserText = lastMsg?.sender === "user" ? lastMsg.text : null;
+
+  useEffect(() => {
+    if (initialUserText) {
+      lastUserTextRef.current = initialUserText;
+      setIsBotThinking(true);
+    }
+  }, [initialUserText]);
 
   const handleSend = (message: Message) => {
-    setLastUserText(message.text);
+    lastUserTextRef.current = message.text;
     setMessages((prev) => [...prev, message]);
     setIsBotThinking(true);
   };
