@@ -88,7 +88,7 @@ export function Chat({
         {isBotThinking && <ChatBotLoadingResponse />}
         <div ref={bottomRef} />
       </div>
-      <div className="mt-6">
+      <div className="mb-8 md:mt-6 md:mb-0">
         <ChatInput onSubmit={handleSend} disabled={isBotThinking} />
       </div>
     </div>

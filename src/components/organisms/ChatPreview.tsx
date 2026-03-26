@@ -1,14 +1,15 @@
-import { Eye, Home, Lightbulb } from "lucide-react";
+import { Eye, Lightbulb } from "lucide-react";
+import ImageSearchIcon from "../../assets/icons/ImageSearch.svg";
+import Robot from "../../assets/images/Robot.svg";
 import type { Message } from "../../types/types";
 import { ChatTitle } from "../atoms/ChatTitle";
 import { ChatInput } from "../molecules/ChatInput";
 import { MessageOption } from "../molecules/MesssageOption";
-import Robot from "../../assets/images/Robot.svg";
 
 const messageOptions = [
   {
     title: "Cretae an image for my presentation",
-    icon: <Home color="#2F82EF" />,
+    icon: <img src={ImageSearchIcon} aria-label="ImageSearchIcon" />,
   },
   { title: "What to do with kids’ art", icon: <Lightbulb color="#F1A62D" /> },
   {
@@ -50,7 +51,7 @@ export function ChatPreview({
           <img src={Robot} alt="Robot" className="object-contain" />
         </div>
       </div>
-      <div className="mt-6">
+      <div className="mb-8 md:mt-6 md:mb-0">
         <ChatInput onSubmit={(msg) => onStartChat(msg)} />
       </div>
     </div>
